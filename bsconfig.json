@@ -1,0 +1,20 @@
+{
+  "name": "sharedlib",
+  "namespace": true,
+  "sources": [
+    {
+      "dir": "js",
+      "subdirs": true
+    }, {
+      "dir": "shared",
+      "subdirs": true
+    }
+  ],
+  "package-specs": {
+    "module": "es6",
+    "in-source": true
+  },
+  "refmt": 3,
+  "suffix": ".bs.js",
+  "generate-merlin": true,
+}

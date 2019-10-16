@@ -1,0 +1,5 @@
+(dirs shared native)
+(include_subdirs unqualified)
+(library
+ (name sharedlib)
+ (libraries unix))
