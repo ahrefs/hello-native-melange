@@ -4,8 +4,8 @@ js:
 	yarn bsb -make-world
 
 native:
-	dune build @all
+	esy dune build @all
 
 clean:
-	dune clean
+	esy dune clean
 	yarn bsb -clean-world

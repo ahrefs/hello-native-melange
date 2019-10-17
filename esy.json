@@ -1,0 +1,10 @@
+{
+  "esy": {
+    "buildsInSource": "unsafe"
+  },
+  "devDependencies": {
+    "@opam/ocamlformat": "0.10",
+    "ocaml": "4.07.x"
+  }
+}
+
