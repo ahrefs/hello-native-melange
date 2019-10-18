@@ -1,5 +1,8 @@
 .PHONY: js native clean
 
+default:
+	@@echo "use 'make js' or 'make native'"
+
 js:
 	yarn bsb -make-world
 
