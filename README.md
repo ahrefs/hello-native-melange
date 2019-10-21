@@ -6,6 +6,14 @@ The `shared` directory contains the core of the library, available in
 both modes. `js` and `native` contain the part specific to one
 implementation of the library.
 
+The library is composed of 3 modules:
+
+- `Date`, which has an implementation per platform and can have a
+  different interface per platform.
+- `Tomorrow`, which has one implementation shared for both platforms.
+- `Yesterday`, which has a signature shared by both platforms, but an
+  implementation per platform.
+
 ## Installation
 
 For bucklescript:
@@ -35,3 +43,6 @@ For native
 ```bash
 esy dune build @all
 ```
+
+The commands are wrapped in a Makefile and can be called with `make
+js` and `make native`.
