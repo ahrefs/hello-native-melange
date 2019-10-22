@@ -14,6 +14,11 @@ The library is composed of 3 modules:
 - `Yesterday`, which has a signature shared by both platforms, but an
   implementation per platform.
 
+There is companion [blog
+post](https://tech.ahrefs.com/how-to-write-a-library-for-bucklescript-and-native-22f45e5e946d)
+giving more details on how to create this kind of library step by
+step.
+
 ## Installation
 
 For bucklescript:
