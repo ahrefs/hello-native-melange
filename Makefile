@@ -44,6 +44,10 @@ build: build_js build_native ## Build both Melange and native projects
 run_js: ## Run the js project
 	node _build/default/exes/date/exes/js
 
+.PHONY: run_native
+run_native: ## Run the native project
+	$(DUNE) exec exes/native.exe
+
 .PHONY: clean
 clean: ## Clean build artifacts and other generated files
 	$(DUNE) clean

@@ -5,7 +5,7 @@
  (libraries date_js)
  (module_system commonjs))
 
-; (executable
-;  (name native)
-;  (modules native)
-;  (libraries date_native))
+(executable
+ (name native)
+ (modules native)
+ (libraries date_native))
