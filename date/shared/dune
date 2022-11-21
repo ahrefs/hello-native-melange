@@ -1,0 +1,5 @@
+; this library is only here to create cm* files so that editor integration works
+; but it is not supposed to be used as is
+(library
+ (name synthetic_date)
+ (modules_without_implementation yesterday))

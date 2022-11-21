@@ -35,7 +35,7 @@ build_js: ## Build the Melange project
 
 .PHONY: build_native
 build_native: ## Build the native project
-	$(DUNE) build @exe_native
+	$(DUNE) build exes/native.exe
 
 .PHONY: build
 build: build_js build_native ## Build both Melange and native projects
