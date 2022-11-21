@@ -11,4 +11,4 @@ let tomorrow = () => {
   let timestamp = Js.Date.getTime(t);
   let tomorrow = Tomorrow.tomorrow(timestamp);
   Js.Date.fromFloat(tomorrow);
-}
+};

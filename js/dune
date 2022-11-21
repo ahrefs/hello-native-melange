@@ -1,0 +1,13 @@
+(library
+ (name date_js)
+ (modes melange))
+
+(rule
+ (target tomorrow.ml)
+ (action
+  (copy# ./../shared/tomorrow.ml tomorrow.ml)))
+
+(rule
+ (target yesterday.mli)
+ (action
+  (copy# ./../shared/yesterday.mli yesterday.mli)))

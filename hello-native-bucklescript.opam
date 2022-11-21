@@ -12,6 +12,7 @@ depends: [
   "ocaml" {= "4.14.0"}
   "dune" {>= "3.0"}
   "reason" {= "3.8.1"}
+  "melange" {= "0.3.1"}
   "ocaml-lsp-server" {dev}
   "ocamlformat" {dev}
 ]
@@ -32,3 +33,7 @@ build: [
   ["dune" "install" "-p" name "--create-install-files" name]
 ]
 dev-repo: "git+https://github.com/ahrefs/hello-native-bucklescript.git"
+
+pin-depends: [
+  [ "dune.dev" "git+https://github.com/ocaml/dune.git#35418c2" ]
+]

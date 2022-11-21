@@ -2,4 +2,4 @@
 /lib
 .merlin
 *.bs.js
-_opam
+/_opam

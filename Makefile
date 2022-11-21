@@ -29,13 +29,20 @@ install: ## Install development dependencies
 .PHONY: deps
 deps: $(opam_file) ## Alias to update the opam file and install the needed deps
 
-.PHONY: build
-build: ## Build the project
-	$(DUNE) build @@default
+.PHONY: build_js
+build_js: ## Build the Melange project
+	$(DUNE) build @exe_js
 
-.PHONY: build-prod
-build-prod: ## Build the project with prod mode
-	$(DUNE) build @@default --profile=prod
+.PHONY: build_native
+build_native: ## Build the native project
+	$(DUNE) build @exe_native
+
+.PHONY: build
+build: build_js build_native ## Build both Melange and native projects
+
+.PHONY: run_js
+run_js: ## Run the js project
+	node _build/default/exes/date/exes/js
 
 .PHONY: clean
 clean: ## Clean build artifacts and other generated files

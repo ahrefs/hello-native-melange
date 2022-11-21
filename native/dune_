@@ -1,0 +1,8 @@
+(library
+ (name date_native)
+ (libraries unix))
+
+(rule
+ (target tomorrow.ml)
+ (action
+  (copy# ./../shared/tomorrow.ml tomorrow.ml)))

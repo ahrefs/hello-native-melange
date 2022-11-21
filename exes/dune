@@ -1,0 +1,11 @@
+(melange.emit
+ (alias exe_js)
+ (target date)
+ (entries js)
+ (libraries date_js)
+ (module_system commonjs))
+
+; (executable
+;  (name native)
+;  (modules native)
+;  (libraries date_native))

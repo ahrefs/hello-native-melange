@@ -1,2 +1,5 @@
 (lang dune 3.6)
+
 (using melange 0.1)
+
+(name hello-native-bucklescript)
