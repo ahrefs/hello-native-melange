@@ -1,0 +1,34 @@
+opam-version: "2.0"
+synopsis: "Skeleton of a shared library for Melange and native OCaml/Reason"
+description: """
+Skeleton of a shared library for Melange and native OCaml/Reason
+"""
+maintainer: "Ahrefs"
+authors: "Ahrefs"
+license: "MIT"
+homepage: "https://github.com/ahrefs/hello-native-bucklescript"
+bug-reports: "https://github.com/ahrefs/hello-native-bucklescript/issues"
+depends: [
+  "ocaml" {= "4.14.0"}
+  "dune" {>= "3.0"}
+  "reason" {= "3.8.1"}
+  "ocaml-lsp-server" {dev}
+  "ocamlformat" {dev}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "--promote-install-files=false"
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+  ["dune" "install" "-p" name "--create-install-files" name]
+]
+dev-repo: "git+https://github.com/ahrefs/hello-native-bucklescript.git"
