@@ -13,6 +13,8 @@ depends: [
   "dune" {>= "3.0"}
   "reason" {= "3.8.1"}
   "melange" {= "0.3.1"}
+  "atdgen" {= "2.10.0"}
+  "ISO8601" {= "0.2.6"}
   "ocaml-lsp-server" {dev}
   "ocamlformat" {dev}
 ]

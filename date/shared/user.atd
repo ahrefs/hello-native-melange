@@ -1,0 +1,6 @@
+type date = string wrap <ocaml module="Date">
+
+type t = {
+  name : string;
+  added : date;
+}

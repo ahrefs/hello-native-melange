@@ -17,14 +17,13 @@
     "bucklescript"
   ],
   "scripts": {
-    "clean": "bsb -clean-world",
-    "build": "bsb -make-world",
-    "watch": "bsb -make-world -w"
+    "postinstall": "patch-package"
+  },
+  "dependencies": {
+    "@ahrefs/bs-atdgen-codec-runtime": "^2.2.0"
   },
   "devDependencies": {
-    "bs-platform": ">= 5.0.0"
-  },
-  "peerDependencies": {
-    "bs-platform": ">= 5.0.0"
+    "patch-package": "^6.5.0",
+    "postinstall-postinstall": "^2.1.0"
   }
 }

@@ -1,13 +1,28 @@
 (library
  (name date_native)
- (libraries unix))
+ (libraries atdgen-runtime yojson unix ISO8601))
 
 (rule
  (target tomorrow.ml)
  (action
-  (copy# ./../shared/tomorrow.ml tomorrow.ml)))
+  (copy# ../shared/tomorrow.ml tomorrow.ml)))
 
 (rule
  (target yesterday.mli)
  (action
-  (copy# ./../shared/yesterday.mli yesterday.mli)))
+  (copy# ../shared/yesterday.mli yesterday.mli)))
+
+(rule
+ (target user_t.mli)
+ (action
+  (copy# ../shared/user_t.mli user_t.mli)))
+
+(rule
+ (target user_t.ml)
+ (action
+  (copy# ../shared/user_t.ml user_t.ml)))
+
+(rule
+ (target user_j.ml)
+ (action
+  (copy# ../shared/user_j.ml user_j.ml)))

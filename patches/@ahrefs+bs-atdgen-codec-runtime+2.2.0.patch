@@ -1,0 +1,11 @@
+diff --git a/node_modules/@ahrefs/bs-atdgen-codec-runtime/src/dune b/node_modules/@ahrefs/bs-atdgen-codec-runtime/src/dune
+new file mode 100644
+index 0000000..940dae9
+--- /dev/null
++++ b/node_modules/@ahrefs/bs-atdgen-codec-runtime/src/dune
+@@ -0,0 +1,5 @@
++(library
++ (name bs_atdgen_codec_runtime)
++ (wrapped false)
++ (libraries bs_json)
++ (modes melange))

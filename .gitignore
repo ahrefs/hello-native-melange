@@ -3,3 +3,4 @@
 .merlin
 *.bs.js
 /_opam
+node_modules

@@ -1,4 +1,4 @@
-project_name = hello-native-bucklescript
+project_name = hello-native-melange
 DUNE = opam exec -- dune
 opam_file = $(project_name).opam
 
@@ -23,8 +23,10 @@ pins: ## Pin development dependencies
 	opam pin add $(project_name).dev .
 
 .PHONY: install
-install: ## Install development dependencies
+install: ## Install dependencies
+	yarn install
 	opam install . --deps-only --with-test
+	rm -rf node_modules/melange && ln -sfn $$(opam var melange:lib)/runtime node_modules/melange
 
 .PHONY: deps
 deps: $(opam_file) ## Alias to update the opam file and install the needed deps

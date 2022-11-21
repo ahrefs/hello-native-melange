@@ -1,0 +1,34 @@
+diff --git a/node_modules/@glennsl/bs-json/src/dune b/node_modules/@glennsl/bs-json/src/dune
+new file mode 100644
+index 0000000..89685cf
+--- /dev/null
++++ b/node_modules/@glennsl/bs-json/src/dune
+@@ -0,0 +1,4 @@
++(library
++ (name bs_json)
++ (wrapped false)
++ (modes melange))
+diff --git a/node_modules/@glennsl/bs-json/src/Json.ml b/node_modules/@glennsl/bs-json/src/json.ml
+similarity index 100%
+rename from node_modules/@glennsl/bs-json/src/Json.ml
+rename to node_modules/@glennsl/bs-json/src/json.ml
+diff --git a/node_modules/@glennsl/bs-json/src/Json.mli b/node_modules/@glennsl/bs-json/src/json.mli
+similarity index 100%
+rename from node_modules/@glennsl/bs-json/src/Json.mli
+rename to node_modules/@glennsl/bs-json/src/json.mli
+diff --git a/node_modules/@glennsl/bs-json/src/Json_decode.ml b/node_modules/@glennsl/bs-json/src/json_decode.ml
+similarity index 100%
+rename from node_modules/@glennsl/bs-json/src/Json_decode.ml
+rename to node_modules/@glennsl/bs-json/src/json_decode.ml
+diff --git a/node_modules/@glennsl/bs-json/src/Json_decode.mli b/node_modules/@glennsl/bs-json/src/json_decode.mli
+similarity index 100%
+rename from node_modules/@glennsl/bs-json/src/Json_decode.mli
+rename to node_modules/@glennsl/bs-json/src/json_decode.mli
+diff --git a/node_modules/@glennsl/bs-json/src/Json_encode.ml b/node_modules/@glennsl/bs-json/src/json_encode.ml
+similarity index 100%
+rename from node_modules/@glennsl/bs-json/src/Json_encode.ml
+rename to node_modules/@glennsl/bs-json/src/json_encode.ml
+diff --git a/node_modules/@glennsl/bs-json/src/Json_encode.mli b/node_modules/@glennsl/bs-json/src/json_encode.mli
+similarity index 100%
+rename from node_modules/@glennsl/bs-json/src/Json_encode.mli
+rename to node_modules/@glennsl/bs-json/src/json_encode.mli

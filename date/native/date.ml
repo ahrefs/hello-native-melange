@@ -9,3 +9,6 @@ let now () = Unix.time ()
 let tomorrow () =
   let t = now () in
   Tomorrow.tomorrow t
+
+let wrap x = ISO8601.Permissive.datetime x
+let unwrap x = ISO8601.Permissive.string_of_datetime x

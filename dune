@@ -1,0 +1,14 @@
+(subdir
+ node_modules
+ (vendored_dirs @ahrefs @glennsl)
+ (dirs @ahrefs @glennsl)
+ (subdir
+  @ahrefs
+  (vendored_dirs bs-atdgen-codec-runtime)
+  (dirs bs-atdgen-codec-runtime)
+  (subdir src))
+ (subdir
+  @glennsl
+  (vendored_dirs bs-json)
+  (dirs bs-json)
+  (subdir src)))

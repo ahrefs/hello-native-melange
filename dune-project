@@ -2,4 +2,4 @@
 
 (using melange 0.1)
 
-(name hello-native-bucklescript)
+(name hello-native-melange)

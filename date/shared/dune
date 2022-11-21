@@ -1,5 +1,24 @@
 ; this library is only here to create cm* files so that editor integration works
 ; but it is not supposed to be used as is
+
 (library
  (name synthetic_date)
  (modules_without_implementation yesterday))
+
+(rule
+ (targets user_t.mli user_t.ml)
+ (deps user.atd)
+ (action
+  (run %{bin:atdgen} -t %{deps})))
+
+(rule
+ (target user_j.ml)
+ (deps user.atd)
+ (action
+  (run %{bin:atdgen} -j -j-std %{deps})))
+
+(rule
+ (target user_bs.ml)
+ (deps user.atd)
+ (action
+  (run %{bin:atdgen} -bs %{deps})))
