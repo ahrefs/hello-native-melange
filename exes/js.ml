@@ -1,4 +1,4 @@
-Js.log ("yesterday was " ^ Js_date.toISOString (Date_js.Yesterday.yesterday ()))
+Js.log ("yesterday was " ^ Js.Date.toISOString (Date_js.Yesterday.yesterday ()))
 
 let user : Date_js.User_t.t =
   { name = "Joe"; added = Date_js.Yesterday.yesterday () }

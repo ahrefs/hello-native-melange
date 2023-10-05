@@ -13,37 +13,28 @@ help: ## Print this help message
 
 .PHONY: create-switch
 create-switch:
-	opam switch create . --deps-only
+	opam switch create . 5.1.0 -y --deps-only
 
 .PHONY: init
-init: create-switch install pins ## Configure everything to develop this repository in local
-
-.PHONY: pins
-pins: ## Pin development dependencies
-	opam pin add $(project_name).dev .
+init: create-switch install ## Configure everything to develop this repository in local
 
 .PHONY: install
 install: ## Install dependencies
-	yarn install
 	opam install . --deps-only --with-test
-	rm -rf node_modules/melange && ln -sfn $$(opam var melange:lib)/runtime node_modules/melange
 
-.PHONY: deps
-deps: $(opam_file) ## Alias to update the opam file and install the needed deps
-
-.PHONY: build_js
-build_js: ## Build the Melange project
-	$(DUNE) build @exe_js
+.PHONY: build_melange
+build_melange: ## Build the Melange project
+	$(DUNE) build @melange
 
 .PHONY: build_native
 build_native: ## Build the native project
 	$(DUNE) build exes/native.exe
 
 .PHONY: build
-build: build_js build_native ## Build both Melange and native projects
+build: build_melange build_native ## Build both Melange and native projects
 
-.PHONY: run_js
-run_js: ## Run the js project
+.PHONY: run_melange
+run_js: ## Run the melange project
 	node _build/default/exes/date/exes/js
 
 .PHONY: run_native
@@ -64,7 +55,4 @@ format-check: ## Checks if format is correct
 
 .PHONY: watch
 watch: ## Watch for the filesystem and rebuild on every change
-	$(DUNE) build @@default --watch
-
-$(opam_file): $(project_name).opam.template dune-project ## Update the package dependencies when new deps are added to dune-project
-	opam exec -- dune build @install        # Update the $(project_name).opam file
+	$(DUNE) build --watch

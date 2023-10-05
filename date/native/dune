@@ -1,9 +1,17 @@
 (library
  (name date_native)
- (libraries atdgen-runtime yojson unix ISO8601))
+ (libraries atdgen-runtime tomorrow yojson unix ISO8601))
 
-(copy_files# "../shared_ml/*.{ml,mli}")
+(copy_files# "../shared/yesterday.mli")
 
-(copy_files# "../shared_atd/*_j.{ml,mli}")
+(rule
+ (targets user_t.mli user_t.ml)
+ (deps ../shared/user.atd)
+ (action
+  (run %{bin:atdgen} -t %{deps} -o ../native/user)))
 
-(copy_files# "../shared_atd/*_t.{ml,mli}")
+(rule
+ (target user_j.ml)
+ (deps ../shared/user.atd)
+ (action
+  (run %{bin:atdgen} -j -j-std %{deps} -o ../native/user)))

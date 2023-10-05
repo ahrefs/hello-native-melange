@@ -15,5 +15,4 @@ let tomorrow = () => {
 
 let wrap = x => Js.Date.fromString(x);
 
-let unwrap = x =>
-  (Js.Date.toISOString(x) |> Js.String.split("T"))->Array.get(0);
+let unwrap = x => Js.Date.toISOString(x);
