@@ -1,0 +1,20 @@
+(library
+ (name date_js)
+ (libraries melange-atdgen-codec-runtime tomorrow)
+ (modes melange)
+ (preprocess
+  (pps melange.ppx)))
+
+(copy_files# "../shared/yesterday.mli")
+
+(rule
+ (targets user_t.mli user_t.ml)
+ (deps ../shared/user.atd)
+ (action
+  (run %{bin:atdgen} -t %{deps} -o ../js/user)))
+
+(rule
+ (target user_bs.ml)
+ (deps ../shared/user.atd)
+ (action
+  (run %{bin:atdgen} -bs %{deps} -o ../js/user)))

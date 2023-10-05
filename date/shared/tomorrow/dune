@@ -1,0 +1,3 @@
+(library
+ (name tomorrow)
+ (modes :standard melange))

@@ -1,6 +1,6 @@
 This repository contains an example of a library written in
-ocaml/reason for both javascript (through bucklescript) and native
-(through the ocaml compiler).
+OCaml/Reason for both JavaScript (through [Melange](melange.re/)) and native
+(through the OCaml compiler).
 
 The `shared` directory contains the core of the library, available in
 both modes. `js` and `native` contain the part specific to one
@@ -21,33 +21,26 @@ step.
 
 ## Installation
 
-For bucklescript:
+Installing requires [opam](opam.ocaml.org/), OCaml's package manager. Once it is
+installed, just needs to run:
 
 ```bash
-yarn
+make init
 ```
-
-For native:
-
-- install [esy](https://esy.sh/)
-- then run `esy install`
-
-It can work with opam, but we use esy in this example as it is easier
-to understand for people from the javascript world.
 
 ## Compilation
 
-For bucklescript:
+For Melange:
 
 ```bash
-yarn bsb -make-world
+dune build @melange
 ```
 
 For native
 
 ```bash
-esy dune build @all
+dune build exes/native.exe
 ```
 
 The commands are wrapped in a Makefile and can be called with `make
-js` and `make native`.
+melange` and `make native`.

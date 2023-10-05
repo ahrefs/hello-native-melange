@@ -2,4 +2,5 @@
 /lib
 .merlin
 *.bs.js
-/_esy
+/_opam
+node_modules
